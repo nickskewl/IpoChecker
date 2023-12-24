@@ -6,6 +6,7 @@ const xml2js = require("xml2js");
 router.get("/", (req, res) => {
   request(
     {
+      rejectUnauthorized: false,
       uri: "https://linkintime.co.in/ipo/IPO.aspx/GetDetails",
       method: "POST",
       headers: {
@@ -41,6 +42,7 @@ router.post("/", (req, res) => {
   // console.log(payload);
   request(
     {
+      rejectUnauthorized: false,
       uri: "https://linkintime.co.in/MIPO/IPO.aspx/SearchOnPan",
       method: "POST",
       headers: {
