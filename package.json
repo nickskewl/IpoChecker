@@ -17,6 +17,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "dom-parser": "^0.1.6",
     "express": "^4.17.1",
     "react-xml-parser": "^1.1.8",

@@ -14,8 +14,13 @@ const IpoState = (props) => {
   const searchIpoAllotment = async (PAN) => {
     setLoading();
     let ipoDataTemp = [];
+    let baseURL = "http://localhost:5000";
+    if (process.env.NODE_ENV === "production") {
+      baseURL = process.env.BASE_URL;
+    }
+    console.log("Using Env: " + process.env.NODE_ENV);
     try {
-      const res = await axios.get("/ipo");
+      const res = await axios.get(`${baseURL}/ipo`);
       // console.log(res.data);
       const ipos = res.data;
       for (let i = 0; i < ipos.length; i++) {
@@ -24,7 +29,7 @@ const IpoState = (props) => {
           PAN: PAN,
           key_word: "PAN",
         };
-        const res = await axios.post("/ipo", body);
+        const res = await axios.post(`${baseURL}/ipo`, body);
         const object = JSON.parse(res.data);
         // console.log("xml: " + i);
         // console.log(object.d);

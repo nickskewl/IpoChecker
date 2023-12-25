@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const api_helper = require("./API_helper");
 
 app.use(express.json({ extended: false }));
+app.use(cors());
 //Home page message
 // app.get("/", (req, res) => res.json({ msg: "Welcome" }));
 
