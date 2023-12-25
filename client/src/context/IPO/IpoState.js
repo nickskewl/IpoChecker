@@ -16,7 +16,7 @@ const IpoState = (props) => {
     let ipoDataTemp = [];
     let baseURL = "http://localhost:5000";
     if (process.env.NODE_ENV === "production") {
-      baseURL = process.env.BASE_URL;
+      baseURL = process.env.REACT_APP_BASE_URL;
     }
     console.log("Using Env: " + process.env.NODE_ENV);
     try {
