@@ -14,11 +14,9 @@ const IpoState = (props) => {
   const searchIpoAllotment = async (PAN) => {
     setLoading();
     let ipoDataTemp = [];
-    let baseURL = "http://localhost:5000";
-    if (process.env.NODE_ENV === "production") {
-      baseURL = process.env.REACT_APP_BASE_URL;
-    }
+    let baseURL = process.env.REACT_APP_BASE_URL;
     console.log("Using Env: " + process.env.NODE_ENV);
+    console.log("base url: " + process.env.REACT_APP_BASE_URL);
     try {
       const res = await axios.get(`${baseURL}/ipo`);
       // console.log(res.data);

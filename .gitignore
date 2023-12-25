@@ -6,6 +6,7 @@ node_modules/
 
 # client
 /client/build
+/client/.env
 /client/DS_Store
 /client/node_modules/
 
